@@ -18,12 +18,22 @@ function App() {
       .catch((error) => console.log(error))
   }, [array])
 
+  function arrayFunction() {
+    setNewval(val)
+  }
+
+  function newKeyfunc(e) {
+    if (e.keyCode === 13) {
+      arrayFunction()
+    }
+  }
+
   return (
     <div>
       <div className="bg-gradient-to-b from-indigo-300 pt-5">
         <div className="container mx-auto w-96 relative">
-          <input type="text" name="search" className="px-3 py-2 bg-gray-100 outline-none shadow-sm border-b-2 border-indigo-700 block w-80 sm:text-sm tracking-widest font-normal mx-auto rounded-md" placeholder="Search..." value={val} onChange={nameFunc} />
-          <button type="button" className="text-indigo-700" onClick={() => setNewval(val)}>
+          <input type="text" name="search" className="px-3 py-2 bg-gray-100 outline-none shadow-sm border-b-2 border-indigo-700 block w-80 sm:text-sm tracking-widest font-normal mx-auto rounded-md" placeholder="Search..." value={val} onChange={nameFunc} onKeyDown={newKeyfunc} />
+          <button type="button" className="text-indigo-700" onClick={arrayFunction}>
             <i className="fa-solid fa-magnifying-glass absolute top-3 right-10"></i>
           </button>
         </div>
