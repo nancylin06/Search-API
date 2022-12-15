@@ -9,7 +9,7 @@ export default function Section(props) {
                         {props.ray.meals.map((list) => {
                             return (
                                 <div className="rounded-md border shadow-md p-2 bg-slate-100 border-indigo-100" key={list.idMeal}>
-                                    <img src={list.strMealThumb} alt="" />
+                                    <img src={list.strMealThumb === "" ? "https://via.placeholder.com/400" : list.strMealThumb} alt="" />
                                     <h1 className="font-semibold tracking-wider leading-7 text-lg">{list.strMeal}</h1>
                                 </div>
                             )
